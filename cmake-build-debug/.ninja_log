@@ -1,0 +1,26 @@
+# ninja log v5
+47	724	0	C:/Users/Tiago/Desktop/feup-da/cmake-build-debug/CMakeFiles/cmake.verify_globs	3c81db474ba86406
+34	3162	6999360049940031	CMakeFiles/DATA_STRUCTURES.dir/data_structures/Heap.cpp.obj	30172559dce83cc
+3	4150	6999360061760457	CMakeFiles/DATA_STRUCTURES.dir/data_structures/Graph.cpp.obj	124ff97339130fb
+75	4226	6999360062480606	CMakeFiles/DATA_STRUCTURES.dir/data_structures/VertexEdge.cpp.obj	b0bac4a89c7eba53
+3164	5975	6999360078700224	CMakeFiles/DATA_STRUCTURES.dir/data_structures/UFDS.cpp.obj	34ef743099ede239
+5976	7710	6999360095840697	libDATA_STRUCTURES.a	48d91508432d18b8
+4227	10293	6999360123150555	CMakeFiles/TP1.dir/main.cpp.obj	4d1a9aa9bc441ace
+7711	10456	6999360124740858	CMakeFiles/TP1.dir/TP1/TestAux.cpp.obj	c3879edccfb06b51
+4152	17395	6999360191773274	CMakeFiles/TP1.dir/TP1/ex1.cpp.obj	18fcdfec42ba241a
+10457	19608	6999360216707588	CMakeFiles/TP1.dir/TP1/ex2.cpp.obj	8a1dff195783c239
+10295	20184	6999360222238451	CMakeFiles/TP1.dir/TP1/ex4.cpp.obj	7abe69a6316f81a2
+17395	24065	6999360260831708	CMakeFiles/TP1.dir/TP1/ex3.cpp.obj	988a651ed59241
+20184	25437	6999360274896189	CMakeFiles/TP1.dir/TP1/ex5.cpp.obj	dfd45d767a16d9c5
+24066	28835	6999360307143555	CMakeFiles/TP1.dir/TP1/ex8.cpp.obj	41c9369955129bf9
+19609	29043	6999360310622786	CMakeFiles/TP1.dir/TP1/ex6.cpp.obj	a5f1325157e061ca
+25437	30208	6999360322492705	CMakeFiles/TP1.dir/TP1/ex9.cpp.obj	d6bfc31450d5fe10
+29044	32732	6999360347733687	lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	ac57d0d950323d79
+32733	38549	6999360405434470	lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	f693b4e763283c5d
+30209	39970	6999360419394117	lib/googletest-master/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	82adb5638c10226f
+28835	46141	6999360482054696	lib/googletest-master/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	c500da6a408ceb7c
+46144	49205	6999360512720047	lib/libgtestd.a	3efedcec332a16cc
+49206	49757	6999360518270692	lib/libgtest_maind.a	b6403d8d04c18ba8
+49225	50171	6999360522454696	lib/libgmockd.a	e75b69521186f557
+50171	51969	6999360540183572	lib/libgmock_maind.a	b06229e2f1b14e9e
+51969	58715	6999360607745907	TP1.exe	ab250b6c8e9e70c7
