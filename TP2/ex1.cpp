@@ -1,10 +1,39 @@
 // By: Gonçalo Leão
 
 #include "exercises.h"
+/* a)
+ * if(T<3) return false;
+    nums[0] = nums[1] = nums[2] = 1;
+    while(true){
+        for(int i=1; i<=T; i++)
+            for(int j=1; j<=T; j++)
+                for(int k=1; k<=T; k++)
+                    if(i+j+k==T){
+                        nums[0] = i;
+                        nums[1] = j;
+                        nums[2] = k;
+                        return true;
+                    }
+    }
+ */
 
+// b)
 bool sum3(unsigned int T, unsigned int nums[3]) {
-    // TODO
-    return false;
+    if(T<3) return false;
+    nums[0] = nums[1] = nums[2] = 1;
+    unsigned int sum = 3;
+    while(true){
+        for(int i=1; i<=T; i++)
+            for(int j=1; j<=i-1; j++){
+                unsigned int k = T-i-j;
+                if(i+j+k==T){
+                    nums[0] = i;
+                    nums[1] = j;
+                    nums[2] = k;
+                    return true;
+                }
+            }
+    }
 }
 
 /// TESTS ///

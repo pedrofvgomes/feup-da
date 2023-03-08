@@ -4,6 +4,15 @@
 
 #include "TestAux.h"
 
+/*
+ * strongly connected components
+ * Kosaraju algorithm
+ * mark every vertex as unvisited
+ * auxilliar function visit(u): if u is unvisited, visit it, call visit(u) on every unvisited
+ * adjacent vertex, and push u to the vector
+ * then, for every element of the vector,
+ */
+
 std::vector<std::vector<int>> IntroGraph::computeSCCs() const {
     std::vector<std::vector<int>> sccs;
     // TODO
