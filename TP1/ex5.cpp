@@ -3,8 +3,30 @@
 #include "exercises.h"
 
 bool IntroGraph::isDAG() const {
-    // TODO
-    return false;
+    int flag0 = 0;
+    int counter = 0;
+
+    for(auto &v : vertexSet) {
+        v->setIndegree(v->getIncoming().size());
+        if(v->getIncoming().empty()) flag0 = 1;
+    }
+    if(flag0==0) return false;
+
+    while(counter!=vertexSet.size()){
+        int testloop = 0;
+        for(auto it = this->vertexSet.begin(); it!=this->vertexSet.end();it++) {
+            auto v = *it;
+            if (v->getIndegree() == 0 and !v->isVisited()) {
+                counter++;
+                v->setVisited(true);
+                testloop = 1;
+                for (auto &e: v->getAdj())
+                    e->getDest()->setIndegree(e->getDest()->getIndegree() - 1);
+            }
+        }
+        if(testloop==0) return false;
+    }
+    return true;
 }
 
 /// TESTS ///

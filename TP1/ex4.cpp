@@ -2,9 +2,35 @@
 
 #include "exercises.h"
 
+/*
+ * calcular indegree de todos
+ * se n houver nenhum com 0, return logo
+ * se houver com 0, adicionar ao vetor e subtrair 1 a todos os vertices que tem uma edge vinda dele
+ * continuar assim ate res.size() == vertexSet.size()
+ */
+
 std::vector<int> IntroGraph::topsort() const {
     std::vector<int> res;
-    // TODO
+    int flag0 = 0;
+
+    for(auto &v : vertexSet) {
+        v->setIndegree(v->getIncoming().size());
+        if(v->getIncoming().empty()) flag0 = 1;
+    }
+    if(flag0==0) return res;
+
+    while(res.size()!=vertexSet.size()){
+        for(auto it = this->vertexSet.begin(); it!=this->vertexSet.end();it++) {
+            auto v = *it;
+            if (v->getIndegree() == 0 and !v->isVisited()) {
+                res.push_back(v->getId());
+                v->setVisited(true);
+                for (auto &e: v->getAdj())
+                    e->getDest()->setIndegree(e->getDest()->getIndegree() - 1);
+            }
+        }
+    }
+
     return res;
 }
 

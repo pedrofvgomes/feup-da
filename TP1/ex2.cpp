@@ -4,9 +4,32 @@
 
 #include "TestAux.h"
 
+/* a)
+ * A-B-E-F-C-G-D
+ */
+
 std::vector<int> IntroGraph::dfs(const int & source) const {
     std::vector<int> res;
-    // TODO
+
+    std::stack<int> s;
+    s.push(source);
+    while(!s.empty()){
+       auto v = findVertex(s.top());
+       s.pop();
+       if(!v->isVisited()){
+           res.push_back(v->getId());
+           v->setVisited(true);
+       }
+
+       auto adj = v->getAdj();
+
+       for(auto it = adj.rbegin(); it!= adj.rend(); it++){
+           auto e = *it;
+           if(!e->getDest()->isVisited())
+               s.push(e->getDest()->getId());
+       }
+    }
+
     return res;
 }
 

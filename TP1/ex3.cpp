@@ -6,7 +6,22 @@
 
 std::vector<int> IntroGraph::bfs(const int & source) const {
     std::vector<int> res;
-    // TODO
+
+    std::queue<int> q;
+    q.push(source);
+    findVertex(source)->setVisited(true);
+    while(!q.empty()){
+        auto v = findVertex(q.front());
+        q.pop();
+        res.push_back(v->getId());
+
+        for(auto &e : v->getAdj())
+            if(!e->getDest()->isVisited()){
+                findVertex(e->getDest()->getId())->setVisited(true);
+                q.push(e->getDest()->getId());
+            }
+    }
+
     return res;
 }
 

@@ -2,13 +2,38 @@
 
 #include "exercises.h"
 
+/* remove an edge from a graph
+ *
+ * find the vertex whose id is the source
+ * call the previously defined method removeEdge() in that vertex and return its value
+ * return false otherwise
+ */
+
 bool IntroGraph::removeEdge(const int &source, const int &dest) {
-    // TODO
+    auto v = this->findVertex(source);
+    if(v!= nullptr) return v->removeEdge(dest);
     return false;
 }
-
+/*
+ * remove a vertex from the graph
+ * first, find the vertex and remove it from the vertexSet
+ * then remove every edge that points to it
+ * return false otherwise
+ */
 bool IntroGraph::removeVertex(const int &id) {
-    // TODO
+    if(findVertex(id)!= nullptr){
+        for(auto &e : findVertex(id)->getAdj())
+            findVertex(id)->removeEdge(e->getDest()->getId());
+        for(auto &v : vertexSet)
+            for(auto &e : v->getAdj())
+                if(e->getDest()->getId()==id)
+                    v->removeEdge(id);
+        auto it = vertexSet.begin();
+        if((*it)->getId()!=id) it++;
+        if(it!=vertexSet.end()) vertexSet.erase(it);
+        else return false;
+        return true;
+    }
     return false;
 }
 
